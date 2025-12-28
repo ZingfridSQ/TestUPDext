@@ -16,3 +16,21 @@ function compareVersions(version) {
 }
 
 
+fetch('https://raw.githubusercontent.com/ZingfridSQ/TestUPDext/refs/heads/main/manifest.json') // Ваш URL
+  .then(response => response.json()) 
+  .then(data => {
+    version = data.version
+    compareVersions(version)
+    if(compareVersions(version)){
+      console.log("Нужно обновления до версии: " + data.version +" Сейчас установлена версия: " + chrome.runtime.getManifest().version); 
+
+
+    }
+    else{
+      console.log("Установлена последняя версия расширения!"); 
+    }
+    
+  })
+  .catch(error => {
+    console.error('Ошибка:', error);
+  });
