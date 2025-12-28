@@ -1,0 +1,12 @@
+{
+	"manifest_version": 3,
+	"version": "0.1.0",
+	"name": "TestUPDext",
+	 "background.service_worker": {
+    "scripts": ["background.js"]
+  },
+  "permissions": ["webNavigation","tabs"]
+	
+	
+	
+}
